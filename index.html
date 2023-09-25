@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+  </head>
+  <body>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=Roboto:wght@300&display=swap");
+
+      body {
+        background-color: #75e6da;
+        text-align: center;
+      }
+      h1 {
+        margin-top: 20px;
+        font-size: 50px;
+        color: rgb(6, 59, 95);
+        font-family: "Major Mono Display", monospace;
+        font-family: "Roboto", sans-serif;
+        text-shadow: 5px 5px 15px black;
+      }
+      .container {
+        margin: 50px auto;
+        border: 2px solid black;
+        width: 400px;
+        height: 520px;
+        padding: 10px 5px;
+        border-radius: 10px;
+        text-align: center;
+        background-color: #05445e;
+        box-shadow: 2px 2px 15px 5px #021c27;
+
+        opacity: 0.8;
+      }
+      .output {
+        width: 390px;
+        height: 50px;
+        border-radius: 5px;
+        margin-top: 5px;
+        font-size: 20px;
+        background-color: #d4f1f4;
+        box-shadow: 2px 2px 2px 2px #d4f1f4 inset,
+          -2px -2px 2px 2px #d4f1f4 inset;
+        outline: none;
+      }
+
+      .box {
+        margin-top: 10px;
+        width: 100%;
+        height: fit-content;
+        text-align: center;
+        display: flex;
+
+        justify-content: space-between;
+      }
+      .box .equal {
+        background-color: #18e73d;
+      }
+
+      .box input {
+        width: 120px;
+        height: 70px;
+        border-radius: 10px;
+        outline: none;
+        background-color: #d4f1f4;
+        box-shadow: 2px 2px 2px 2px #022839;
+      }
+      .clear {
+        width: 380px;
+        height: 50px;
+        border-radius: 10px;
+        outline: none;
+        background-color: #f7a608;
+        box-shadow: 2px 2px 2px 2px #022839;
+        margin-top: 10px;
+      }
+    </style>
+
+    <h1>Calculator</h1>
+    <div class="container">
+      <form name="form">
+        <input type="text" name="result" class="output" />
+
+        <div class="box">
+          <input type="button" value=" 1 " onclick="form.result.value += '1'" />
+          <input type="button" value=" 2 " onclick="form.result.value += '2'" />
+          <input type="button" value=" 3 " onclick="form.result.value += '3'" />
+        </div>
+
+        <div class="box">
+          <input type="button" value=" 4 " onclick="form.result.value += '4'" />
+          <input type="button" value=" 5 " onclick="form.result.value += '5'" />
+          <input type="button" value=" 6 " onclick="form.result.value += '6'" />
+        </div>
+
+        <div class="box">
+          <input type="button" value=" 7 " onclick="form.result.value += '7'" />
+          <input type="button" value=" 8 " onclick="form.result.value += '8'" />
+          <input type="button" value=" 9 " onclick="form.result.value += '9'" />
+        </div>
+
+        <div class="box">
+          <input type="button" value=" + " onclick="form.result.value += '+'" />
+          <input type="button" value=" - " onclick="form.result.value += '-'" />
+          <input type="button" value=" * " onclick="form.result.value += '*'" />
+        </div>
+
+        <div class="box">
+          <input type="button" value=" / " onclick="form.result.value += '/'" />
+          <input type="button" value=" 0 " onclick="form.result.value += '0'" />
+          <input
+            type="button"
+            class="equal"
+            value=" = "
+            onclick="form.result.value = eval(form.result.value)"
+          />
+        </div>
+        <input
+          type="button"
+          class="clear"
+          value="Clear"
+          onclick="form.result.value=''"
+        />
+      </form>
+    </div>
+  </body>
+</html>
